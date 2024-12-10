@@ -1,0 +1,527 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  background: url("img/home-img.png") no-repeat center center; /* Evita que la imagen se repita y la centra */
+  background-size: cover; /* Hace que la imagen cubra toda el área del body sin distorsionarse */
+}
+
+
+
+.screen {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.screen.active {
+  display: block;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/home-img.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: block;
+  margin: 10px auto;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.button:hover {
+  background-color: #534bff;
+}
+
+form input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6C63FF;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+form input::placeholder {
+  color: #ccc;
+}
+
+form button {
+  margin-top: 20px;
+}
+
+/* Cartelera Styles */
+.movies-section {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  z-index: 3;
+  position: relative;
+}
+
+.movie {
+  text-align: center;
+}
+
+.movie img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.movie p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Menú de Navegación */
+.menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  padding: 10px 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #6C63FF;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.modal-imagen {
+  width: 2px; 
+  height: 5px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-content h2 {
+  margin: 10px 0;
+}
+
+.modal-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  background-color: #ff4747;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #e63c3c;
+}
+
+/* Géneros - Estilo del menú */
+.genres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #221b2f;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 10px;
+  margin: 20px auto;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.genre-btn {
+  background-color: #3e2b5b;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.genre-btn:hover {
+  background-color: #6b3d8c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.genre-btn.active {
+  background-color: #915ad5;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.d-none {
+  display: none;
+}
+
+
+/* Imagen en la pantalla de descripción */
+.descripcion-imagen {
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  max-height: 400px; /* Limita la altura de la imagen */
+  display: block;
+  margin: 0 auto; /* Centra la imagen */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
+}
+.menu-container {
+  position: relative; /* Contenedor relativo para posicionar el menú */
+}
+
+.menu {
+  position: absolute; /* Posiciona el menú en relación con el contenedor */
+  top: 50px; /* Ajusta según la altura del botón */
+  right: 0; /* Alinea el menú a la derecha */
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  display: none; /* Oculto por defecto */
+  z-index: 1000;
+}
+
+.menu.active {
+  display: block; /* Muestra el menú cuando está activo */
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* Estilo para el menú desplegable */
+.menu-container {
+  position: relative;
+}
+
+.menu {
+  display: none; /* Ocultar el menú por defecto */
+  position: absolute;
+  top: 100%; /* Coloca el menú justo debajo del botón de hamburguesa */
+  left: 0;
+  background-color: #fff; /* Fondo del menú */
+  width: 200px; /* Ajusta el ancho del menú */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para el menú */
+  border-radius: 5px;
+  z-index: 10; /* Asegúrate de que se muestre sobre otros elementos */
+}
+
+.menu.active {
+  display: block; /* Muestra el menú cuando está activo */
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #ddd; /* Separador entre las opciones */
+}
+
+.menu li:last-child {
+  border-bottom: none; /* Eliminar separador del último elemento */
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #f5f5f5; /* Fondo en hover */
+}
+.menu-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* Botón de cierre en la descripción de la película */
+.btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Estilo del menú */
+.menu-container {
+  position: relative;
+}
+
+.menu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 40px; /* Ajusta la posición respecto al botón */
+  right: 0;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.menu.active {
+  display: block; /* Mostrar cuando esté activo */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+.menu {
+  display: none; /* El menú está oculto por defecto */
+}
+
+.menu.active {
+  display: block; /* Se muestra cuando tiene la clase "active" */
+}
+/* Contenedor del menú */
+.menu-container {
+  position: relative;
+}
+
+/* Estilo del menú */
+.menu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 50px; /* Ajusta según la altura del botón */
+  right: 0;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 200px; /* Ancho fijo para que las opciones se alineen */
+}
+
+/* Muestra el menú cuando está activo */
+.menu.active {
+  display: block;
+}
+
+/* Estilo del botón de menú */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo del botón de cierre */
+.menu-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Estilo de los enlaces del menú */
+.menu-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-options li {
+  margin: 10px 0;
+}
+
+.menu-options li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu-options li a:hover {
+  background-color: #f5f5f5; /* Fondo en hover */
+  color: black; /* Cambia el color del texto al hacer hover */
+}
+
+/* Estilo del enlace de cierre de sesión */
+.logout {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  background-color: #ff4747;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logout:hover {
+  background-color: #e63c3c;
+}

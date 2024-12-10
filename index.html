@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINESCAPE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Pantalla de Inicio -->
+  <div id="inicio" class="screen active">
+    <div class="content">
+      <img src="img/Logo.png" alt="logo">
+      <h1>Bienvenido al maravilloso mundo del cine en CINESCAPE</h1>
+      <button id="btn-ingresar" class="button">INGRESAR</button>
+      <button id="btn-registrarme" class="button">REGISTRARME</button>
+    </div>
+  </div>
+
+  <!-- Formulario de Registro -->
+<div id="form-registro" class="form-registro d-none">
+    <img src="img/Logo.png" alt="logo">
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br>
+        <label for="apellido">apellido:</label>
+        <input type="apellido" id="apellido" required><br>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" required><br>
+       
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required><br>
+        
+        <button type="submit" id="btn-enviar-registro">Enviar</button>
+  </form>
+</div>
+
+  <!-- Pantalla de Cartelera -->
+  <div id="cartelera" class="screen d-none">
+    <div class="genre-btns">
+      <button class="genre-btn active" data-genre="aventuras">Aventuras</button>
+      <button class="genre-btn" data-genre="animadas">Animadas</button>
+      <button class="genre-btn" data-genre="drama">Drama</button>
+    </div>
+
+    <div class="movies">
+      <!-- Estrenos -->
+      <div id="estrenos" class="movie-section">
+        <h2>Estrenos</h2>
+        <div class="movie-cards" id="estrenos-cards">
+          <!-- Las películas de Estreno serán renderizadas aquí -->
+        </div>
+      </div>
+
+      <!-- Próximamente -->
+      <div id="proximamente" class="movie-section">
+        <h2>Próximamente</h2>
+        <div class="movie-cards" id="proximamente-cards">
+          <!-- Las películas Próximas serán renderizadas aquí -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+<!-- Pantalla de Descripción de Película -->
+<div id="descripcion-pelicula" class="screen d-none">
+  <div class="menu-container">
+    <button class="menu-toggle">
+      <span class="menu-icon">&#9776;</span> <!-- Icono del menú hamburguesa -->
+    </button>
+
+    <nav class="menu">
+      <button class="menu-close">X</button> <!-- Botón de cierre -->
+      <h3>Editar Mi Cuenta</h3>
+      <ul class="menu-options">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Aventuras</a></li>
+        <li><a href="#">Animadas</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Comedia</a></li>
+        <li><a href="#">Ficción</a></li>
+        <li><a href="#">Nacionales</a></li>
+      </ul>
+      <a href="#" class="logout">Cerrar Sesión</a>
+    </nav>
+  </div>
+
+  <div class="movie-description">
+    <button id="btn-cerrar" class="btn-cerrar">&times;</button>
+    <img id="descripcion-imagen" alt="Imagen de la película" class="descripcion-imagen">
+    <h2 id="descripcion-titulo"></h2>
+    <p id="descripcion-corta">Una película fantástica llena de emoción y aventura.</p> <!-- Descripción corta -->
+    <p id="descripcion-texto"></p> <!-- Descripción completa -->
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
